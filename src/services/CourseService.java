@@ -94,15 +94,27 @@ public class CourseService {
         ArrayList<Student> enrolledStudents = new ArrayList<Student>();
         Course enrolledCourse = courses.get(courseId);
 
-        students.forEach(studentId, student)->{
+        students.forEach((studentId, student) -> {
             ArrayList<Course> enrolledCourses = student.getEnrolledCourses();
-            for (Course course; enrolledCourses) {
+            for (Course course: enrolledCourses) {
                 // get the course based on courseId passed-in param
+                if(course.getId().equals(courseId))
+                    enrolledStudents.add(student);
             }
+        });
+
+        System.out.println("Enrolled students for course: " + enrolledCourse.getName());
+        System.out.println("\n***************************\n");
+        enrolledStudents.forEach(student -> {
+            System.out.println(student);
         });
     }
 
     public void showAllCourses(){
+        System.out.println("All available courses");
+        courses.forEach((courseId, course) -> {
+
+                }
         //TODO implement using collections loops
     }
 

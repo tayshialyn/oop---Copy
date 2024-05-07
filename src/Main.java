@@ -31,10 +31,23 @@ public class Main {
         //display the highest grade from all the students
         System.out.println("Highest Grade is:" + courseService.bestGrade());
 
-        // call overloaded function enrollStudent
-        // to store multiple students (as an array)
+        // TODO call overloaded function enrollStudent
+        // TODO to store multiple students (as an array)
 
+        String studentId2 = "884545";
+        courseService.enrollStudent(studentId2, courseId);
+        courseService.enrollStudent(studentId2, courseId2);
+        courseService.enrollStudent(studentId2, courseId3);
+        courseService.displayStudentCourseInformation(studentId);
 
+        // display students who have taken the course phys_01
+        courseService.showEnrolledStudents("phys_01");
+
+        // display students who have taken the course art_01
+        courseService.showEnrolledStudents("art_01");
+
+        // display students who have taken the course math_01 (returns no student)
+        courseService.showEnrolledStudents("math_01");
 
 
 
